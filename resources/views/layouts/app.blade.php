@@ -15,6 +15,7 @@
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     @section('styles')
     @show
+<script src="{{ asset('js/app.js') }}"></script>
 </head>
 <body>
 <div class="container">
@@ -43,7 +44,6 @@
     &copy; <a href="http://mikhalkevich.colony.by" target="_blank">mikhalkevich</a>
 </div>
 <!-- Scripts -->
-<script src="{{ asset('js/app.js') }}"></script>
 <script src="{{ asset('js/lang.js') }}"></script>
 @section('scripts')
 @show

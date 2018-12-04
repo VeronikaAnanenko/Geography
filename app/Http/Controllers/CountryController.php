@@ -5,16 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\CountryEn;
 use App\CountryRu;
-use App\City;
+use App\CityGeo;
 
 class CountryController extends Controller
 {
  protected $data;
 	public function __construct(){
-	$path = config_path().'/countries_states.json';
-	 $json = file_get_contents($path);
-$data = json_decode($json,true);
-$this->data = $data; 
+		$path = config_path().'/countries_states.json';
+		$json = file_get_contents($path);
+		$data = json_decode($json,true);
+		$this->data = $data; 
 	}
 
     public function getIndex($url = null){
@@ -25,7 +25,7 @@ $this->data = $data;
     }
 	public function getName($url=null, $name = null){
         $obj = CountryEn::where('country_name', $name)->first();
-
+		
         if (isset($_COOKIE['lang'])) {
             if ($_COOKIE['lang'] == 'DEU') {
                 $obj = CountryDe::where('country_iso_code', $obj->country_iso_code)->first();
@@ -45,6 +45,6 @@ $this->data = $data;
 			 } 
             } 
 		//$cities = City::where('country_iso_code', $obj->country_iso_code)->get();
-		return view('country', compact('obj', 'states'));
+		return view('country', compact('obj', 'states','name'));
 	}
 }

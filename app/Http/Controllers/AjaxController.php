@@ -29,4 +29,9 @@ class AjaxController extends Controller
 		$cities=CityGeo::where("country_id",$obj->id)->get();
      return view('ajax.city',compact("country","cities"));
 	}
+	public function getCabinet(){
+		$id=(int)$_POST['id'];
+		$cities=CityGeo::where('country_id',$id)->get();
+		return view('ajax.cabinet', compact("cities"));
+	}
 }

@@ -1,3 +1,6 @@
+<div>
+    {!!  $parse !!}
+</div>
 <script>
 $(function(){
 	$("#news a").each(function(){

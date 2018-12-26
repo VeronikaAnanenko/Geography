@@ -25,6 +25,6 @@ class GoogleNews implements ParseContract
         $this->crawler = new Crawler($file);
         //$tt = $this->html($this->crawler, '.images_table');
 		$body=$this->crawler->filter('.lBwEZb')->html();
-		echo $body;
+		return $body;
     }
 }

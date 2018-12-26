@@ -11,10 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->middleware('cookie');
-
+Route::get('/', 'BaseController@getIndex')->middleware('cookie');
+Route::get('news/','NewsController@getAll');
+Route::get('news/{id}','NewsController@getOne');
 Auth::routes();
 
 Route::get('ajax', 'AjaxController@getNews');

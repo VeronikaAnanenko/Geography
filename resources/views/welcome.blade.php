@@ -37,18 +37,23 @@
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs nav-mama" role="tablist">
                             <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab"
-                                                                      data-toggle="tab">Contitents</a></li>
+                                                                      data-toggle="tab">News</a></li>
                             <li role="presentation"><a href="#services" aria-controls="calculate" role="tab"
-                                                       data-toggle="tab">Countries</a></li>
+                                                       data-toggle="tab">Photos</a></li>
                             <li role="presentation"><a href="#profile" aria-controls="profile" role="tab"
-                                                       data-toggle="tab">Cities</a></li>
+                                                       data-toggle="tab">Videos</a></li>
                             <li role="presentation"><a href="#messages" aria-controls="messages" role="tab"
                                                        data-toggle="tab">Travels</a></li>
                         </ul>
                         <!-- Tab panes -->
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="home">
-                                Continents
+
+                                @foreach($news as $one)
+                                    <div>
+                                        <a href="{{asset('news/'.$one->id)}}">{{$one->putday}} - {{$one->country_name}}</a>
+                                    </div>
+                                @endforeach
 
                             </div>
                             <div role="tabpanel" class="tab-pane" id="services">
